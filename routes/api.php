@@ -22,13 +22,13 @@ Route::prefix('users')->group(function () {
     Route::middleware('auth:api')->group(function () {
         Route::get('addresses', [AddressController::class, 'index']);
         Route::post('addresses', [AddressController::class, 'addUserAddress']);
-        
         Route::get('restaurants', [RestaurantController::class, 'getRestaurants']);
     });
+
 });
 
 Route::middleware('auth:api')->group(function () {
-    Route::get('addresses/{uid}', [AddressController::class, 'show']);
+    Route::get('addresses/{uid}', [AddressController::class, 'sho  w']);
     Route::put('addresses/{uid}', [AddressController::class, 'update']);
     Route::delete('addresses/{uid}', [AddressController::class, 'destroy']);
 });
